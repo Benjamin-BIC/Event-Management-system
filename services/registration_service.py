@@ -1,6 +1,4 @@
 from typing import List, Optional
-
-from httpx import delete
 from schemas.registration import Registration, RegistrationCreate
 from services.event_service import event_service
 from services.user_service import user_service
@@ -61,4 +59,5 @@ def update_registration(self, registration_id: int, attended: bool) -> Optional[
     def get_registrations_by_user(self, user_id: int) -> List[Registration]:
         return [registration for registration in self.registrations_db if registration.user_id == user_id]
 
-    registration_service = RegistrationService()
+
+registration_service = RegistrationService()
